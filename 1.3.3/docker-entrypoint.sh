@@ -5,6 +5,8 @@ COMMANDS="debug help logtail show stop adduser fg kill quit run wait console for
 START="start restart zeoserver"
 CMD="bin/instance"
 
+mkdir -p /data/filestorage /data/blobstorage /data/zeoserver && chown -R senaite:senaite /data
+
 gosu senaite python /docker-initialize.py
 
 if [ -e "custom.cfg" ]; then
